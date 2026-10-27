@@ -16,7 +16,15 @@ int y=2;
 int product = x * y;//accidently put "%" instead of "*"
 cout<<"Product ="<<product<<endl;
 }
-void task3();
+void task3() // multiplication
+{
+    int N = (5278%10) + 1; // had fogotten a semicolon again
+    for (int i=1; i<=N; i++)// initially didnt increment
+    { 
+ cout <<"9 x"<<i<<"="<<9*i<<endl;
+    }
+
+}
 void task4();
 void task5();
 void task6();
@@ -27,5 +35,7 @@ void task10();
 int main()
 {
 task1();
+task2();
+task3();// forgot to call both task 2-3 in main 
     return 0;
 }
