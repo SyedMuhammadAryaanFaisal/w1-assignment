@@ -100,7 +100,32 @@ void task8()//static local variables//have to call task 5 times
  cout<<"function call count:"<< count<<endl;//forgot to display count here
  cout<<endl;  
 }
-void task9();
+double computeAverage(){ // debugging task9 starts here
+    int total = 0;
+    int count= 0;
+    int mark= 0;
+    do
+    {
+       cin>> mark;
+       if(mark==-1)
+       { break; //Fix:stopping input without counting -1
+    }
+    if (mark>=0)
+    { total= total+ mark;
+    count++;//Fix: count only valid marks 
+    } //Fix: ignores negative marks except -1, which stops input
+} while (mark!=-1); // bug: accidentaly put "2",//Fix: replaced it with"1"
+   if (count ==0){
+    return 0.0; // Fix; avoid division by zero
+   } return static_cast<double>(total)/count; 
+   //Fix: convert total to double to get a decimal average
+}//bug: was missing a bracket// Fix: placed the bracket
+void task9()
+{
+cout<<"enter your marks (-1 to stop):"<<endl;
+double average= computeAverage();
+cout<<"Average marks are =" <<average<<endl;
+}
 void task10();
 int main()
 {
@@ -118,5 +143,6 @@ task8();// recalling in main 5 times
 task8();
 task8();
 
+task9();
 return 0;
 }
