@@ -92,7 +92,14 @@ void task7(string name, int marks)//functions and parameters//setting parameters
 cout<<"welcome,"<<name<<endl;
 cout<<" your marks are="<<marks<<endl;
 }
-void task8();
+void task8()//static local variables//have to call task 5 times
+{
+   static int count = 0;
+ count++;
+ cout<<"personalization number= 5278"<<endl;
+ cout<<"function call count:"<< count<<endl;//forgot to display count here
+ cout<<endl;  
+}
 void task9();
 void task10();
 int main()
@@ -104,5 +111,12 @@ task4();
 task5();
 task6();//forgot to recall again
 task7("5278",78);//5278 as name and 78 as marks
+
+task8();
+task8();
+task8();// recalling in main 5 times
+task8();
+task8();
+
 return 0;
 }
