@@ -16,7 +16,7 @@ int y=2;
 int product = x * y;//accidently put "%" instead of "*"
 cout<<"Product ="<<product<<endl;
 }
-void task3() // multiplication
+void task3() // loops/ iterations//multiplication
 {
     int N = (5278%10) + 1; // had fogotten a semicolon again
     for (int i=1; i<=N; i++)// initially didnt increment
@@ -25,8 +25,59 @@ void task3() // multiplication
     }
 
 }
-void task4();
-void task5();
+void task4()//  if else //5278 = even or odd
+{
+    int number=5278;
+    if(number%2==0){
+        cout<<number<<"is even"<<endl;
+    }
+    else{
+        cout<<number<<"is odd"<<endl;
+    }
+} // no errors in code, went smoothly
+void task5()//switch case//displaying months by input value of personalization num
+{
+int month= (5278%12) + 1;//got a bit confused here because i accidently put "/" instead of "% modulus"
+switch (month){
+    case 1:
+    cout<<"january"<<endl;
+    break;
+    case 2:
+    cout<<"february"<<endl;
+    break;
+    case 3:
+    cout<<"march"<<endl;
+    break;
+    case 4:
+    cout<<"april"<<endl;
+    break;
+    case 5:
+    cout<<"may"<<endl;//forgot semicolon
+    break;
+    case 6:
+    cout<<"june"<<endl;
+    break;
+    case 7:
+    cout<<"july"<<endl;
+    break;
+    case 8:
+    cout<<"august"<<endl;
+    break;
+    case 9:
+    cout<<"september"<<endl;
+    break;//didnt put "break" here 
+    case 10:
+    cout<<"october"<<endl;
+    break;
+    case 11:
+    cout<<"november"<<endl;
+    break;
+    case 12:
+    cout<<"december"<<endl;
+    break;
+
+}
+}
 void task6();
 void task7();
 void task8();
@@ -37,5 +88,7 @@ int main()
 task1();
 task2();
 task3();// forgot to call both task 2-3 in main 
-    return 0;
+task4();
+task5();
+return 0;
 }
