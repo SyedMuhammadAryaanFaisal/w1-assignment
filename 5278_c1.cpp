@@ -78,8 +78,20 @@ switch (month){
 
 }
 }
-void task6();
-void task7();
+void task6()//arrays//printing the third value
+{
+int numbers [5]={5,2,8,7,8};// initially i used "{}" instead of "[]"
+for(int i=0;i<5;i++)
+{
+    cout<<"numbers["<<i<<"]="<<numbers[i]<<endl; //displaying "[]" as well for better understanding in output
+}
+cout<<"third value="<<numbers[2]<<endl;
+}
+void task7(string name, int marks)//functions and parameters//setting parameters
+{
+cout<<"welcome,"<<name<<endl;
+cout<<" your marks are="<<marks<<endl;
+}
 void task8();
 void task9();
 void task10();
@@ -90,5 +102,7 @@ task2();
 task3();// forgot to call both task 2-3 in main 
 task4();
 task5();
+task6();//forgot to recall again
+task7("5278",78);//5278 as name and 78 as marks
 return 0;
 }
