@@ -126,23 +126,46 @@ cout<<"enter your marks (-1 to stop):"<<endl;
 double average= computeAverage();
 cout<<"Average marks are =" <<average<<endl;
 }
-void task10();
+// task10: GLobal vs Static variables
+//A global variable can be accessed by different functions
+int globalNumber= 5278;
+void task10()
+{
+//A static variable stays inside this function but also keeps its value between calls
+static int staticNumber = 5278;
+globalNumber++;
+staticNumber++;
+cout<<"Global number"<<globalNumber<<endl;
+cout<<"Static number"<<staticNumber<<endl;
+cout<<endl;
+}
+// All tasks done
 int main()
 {
 task1();
+
 task2();
+
 task3();// forgot to call both task 2-3 in main 
+
 task4();
+
 task5();
+
 task6();//forgot to recall again
+
 task7("5278",78);//5278 as name and 78 as marks
 
 task8();
 task8();
-task8();// recalling in main 5 times
+task8();// calling in main 5 times
 task8();
 task8();
 
 task9();
-return 0;
-}
+
+task10();
+task10();//calling 3 times
+task10();
+return 0;}
+// All tasks done and compiles and run properly
