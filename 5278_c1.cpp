@@ -3,11 +3,6 @@
 #include<string>
 using namespace std;
 
-
-#include<iostream>
-#include<string>
-using namespace std;
-
 // Task 1: Variables and Output
 void task1()
 {
@@ -171,28 +166,82 @@ void task8()
     cout << endl;
 }
 
+double computeAverage()
+{
+    int total = 0;
+    int count = 0;
+    int mark = 0;
+
+    do
+    {
+        cin >> mark;
+
+        if (mark == -1)
+        {
+            break;
+            // Bug: I initially counted -1 as a valid mark.
+            // Fix: Added break before calculating the total and count.
+        }
+
+        if (mark >= 0)
+        {
+            total = total + mark;
+            count++;
+            //bug: i had added && mark<=100 putting a limit now.
+            //fix: i removed it.
+            
+        }
+        else
+        {
+            cout << "negative mark ignored." << endl;
+        }
+
+    } while (mark != -1);
+    // Bug: I accidentally used == instead of != in the loop condition.
+    // Fix: Changed it to != so the loop continues until -1 is entered.
+
+    if (count == 0)
+    {
+        return 0.0;
+        // Bug: The program could divide by zero if no valid marks were entered.
+        // Fix: Added a condition to return 0.0 when count is zero.
+    }
+
+    return static_cast<double>(total) / count;
+    // Bug: I initially used integer division, which removed decimal values.
+    // Fix: Used static_cast<double> to calculate an accurate decimal average.
+}
+
 void task9()
 {
     cout << "Enter your marks (-1 to stop):" << endl;
 
-    int average = computeAverage();
+    double average = computeAverage();
 
     cout << "Average marks are = " << average << endl;
 }
+// Task 10: Global vs Static Variables
 
 int globalNumber = 5278;
 
 void task10()
 {
-    int staticNumber = 5278;
+    static int staticNumber = 5278;
 
-    globalNumber--;
+    // Bug: I initially forgot to use the static keyword.
+    // Fix: Added static so the variable retains its value between function calls.
+
+    globalNumber++;
     staticNumber++;
+
+    // Bug: I accidentally used -- instead of ++ for the global variable.
+    // Fix: Changed -- to ++ so the global number increases with every function call.
 
     cout << "Global number: " << globalNumber << endl;
     cout << "Static number: " << staticNumber << endl;
-}
 
+    cout << endl;
+}
 int main()
 {
     task1();
@@ -210,11 +259,12 @@ int main()
     task8();
     task8();
 
-    task9();
+    task9();// i used 50,60,70 their average was 60.
+    task9();// i used 50,0,70 their average was 40.
+    task9();// i used -1 and got 0.
 
     task10();
-    task10();
-    task10();
+   
 
     return 0;
 }
