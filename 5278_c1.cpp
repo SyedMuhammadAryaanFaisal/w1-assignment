@@ -66,81 +66,109 @@ void task4()
         cout << number << " is odd" << endl;
     }
 }
-
+// error: i recalled the tasks here again.
+//fix: i removed them.
+// Task 5: Switch Case
 void task5()
 {
-    int month = (5278 / 12) + 1;
+    int month = (5278 % 12) + 1;
+    // Bug: I accidentally used division (/) instead of modulus (%).
+    // Fix: Replaced / with % to calculate the correct month number.
 
     switch (month)
     {
-        case 1: cout << "January" << endl;
-        case 2: cout << "February" << endl; break;
-        case 3: cout << "March" << endl; break;
-        case 4: cout << "April" << endl; break;
-        case 5: cout << "May" << endl; break;
-        case 6: cout << "June" << endl; break;
-        case 7: cout << "July" << endl; break;
-        case 8: cout << "August" << endl; break;
-        case 9: cout << "September" << endl; break;
-        case 10: cout << "October" << endl; break;
-        case 11: cout << "November" << endl; break;
-        case 12: cout << "December" << endl; break;
+        case 1:
+            cout << "January" << endl;
+            break;
+
+        case 2:
+            cout << "February" << endl;
+            break;
+
+        case 3:
+            cout << "March" << endl;
+            break;
+
+        case 4:
+            cout << "April" << endl;
+            break;
+
+        case 5:
+            cout << "May" << endl;
+            break;
+
+        case 6:
+            cout << "June" << endl;
+            break;
+
+        case 7:
+            cout << "July" << endl;
+            break;
+
+        case 8:
+            cout << "August" << endl;
+            break;
+
+        case 9:
+            cout << "September" << endl;
+            break;
+
+        case 10:
+            cout << "October" << endl;
+            break;
+
+        case 11:
+            cout << "November" << endl;
+            break;
+
+        case 12:
+            cout << "December" << endl;
+            break;
     }
 }
 
+// Task 6: Arrays
 void task6()
 {
     int numbers[5] = {5, 2, 8, 7, 8};
+    // Bug: I initially used curly brackets {} instead of square brackets [] when declaring the array.
+    // Fix: Used square brackets [] to declare the array size.
 
-    for (int i = 0; i <= 5; i++)
+    for (int i = 0; i < 5; i++)
     {
         cout << "numbers[" << i << "]=" << numbers[i] << endl;
     }
 
-    cout << "third value=" << numbers[3] << endl;
+    cout << "third value=" << numbers[2] << endl;
+    // Bug: I initially selected the wrong array index.
+    // Fix: Used index 2 because array indexing starts from 0.
 }
 
+// Task 7: Functions and Parameters
 void task7(string name, int marks)
 {
+    // Bug: I initially forgot to pass the required arguments when calling the function.
+    // Fix: Passed the name and marks through the function call in main.
+
     cout << "Welcome, " << name << endl;
-    cout << "Your marks are=" << score << endl;
+    cout << "Your marks are=" << marks << endl;
 }
 
+// Task 8: Static Local Variables
 void task8()
 {
-    int count = 0;
+    static int count = 0;
+    // Bug: I initially forgot to use the static keyword.
+    // Fix: Added static so the variable keeps its value between function calls.
+
     count++;
 
     cout << "Personalization number=5278" << endl;
     cout << "Function call count: " << count << endl;
-}
+    // Bug: I initially forgot to display the updated count.
+    // Fix: Added the count variable to the output statement.
 
-double computeAverage()
-{
-    int total = 0;
-    int count = 0;
-    int mark = 0;
-
-    do
-    {
-        cin >> mark;
-
-        if (mark == -1)
-        {
-            total += mark;
-            count++;
-            break;
-        }
-
-        if (mark >= 0)
-        {
-            total = total + mark;
-            count++;
-        }
-
-    } while (mark == -1);
-
-    return total / count;
+    cout << endl;
 }
 
 void task9()
