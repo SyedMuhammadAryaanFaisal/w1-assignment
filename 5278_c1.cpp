@@ -67,17 +67,6 @@ void task4()
     }
 }
 
-int main()
-{
-    task1();
-    task2();
-    task3();
-    task4();
-
-    return 0;
-}
-
-
 void task5()
 {
     int month = (5278 / 12) + 1;
