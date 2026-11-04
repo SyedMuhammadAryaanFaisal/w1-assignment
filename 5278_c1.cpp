@@ -3,38 +3,62 @@
 #include<string>
 using namespace std;
 
+
+#include<iostream>
+#include<string>
+using namespace std;
+
+// Task 1: Variables and Output
 void task1()
 {
-    int a = 2
+    int a = 2;
     int b = 8;
-    int sum = a - b;
-    cout << "sum=" << total << endl;
+    int sum = a + b; 
+    // Bug: I forgot the semicolon after declaring variable a.
+    // Fix: Added the missing semicolon.
+
+    cout << "sum=" << sum << endl;
+    // Bug: I previously used an incorrect variable name when displaying the result.
+    // Fix: Changed it to sum so the correct value is displayed.
 }
 
+// Task 2: Arithmetic Operations
 void task2()
 {
     int x = 22;
     int y = 2;
-    int product = x % y;
+
+    int product = x * y;
+    // Bug: I accidentally used the modulus operator (%) instead of multiplication (*).
+    // Fix: Replaced % with * to calculate the correct product.
+
     cout << "Product =" << product << endl;
 }
 
+// Task 3: Loops and Iterations
 void task3()
 {
     int N = (5278 % 10) + 1;
 
-    for (int i = 1; i <= N; i--)
+    for (int i = 1; i <= N; i++)
     {
+        // Bug: I initially forgot to increment the loop variable.
+        // Fix: Added i++ so the loop progresses correctly.
+
         cout << "9 x " << i << " = " << 9 * i << endl;
     }
 }
 
+// Task 4: If-Else Statements
 void task4()
 {
     int number = 5278;
 
-    if (number % 2 == 1)
+    if (number % 2 == 0)
     {
+        // Bug: I previously used == 1, which checks for odd numbers.
+        // Fix: Changed it to == 0 to correctly identify even numbers.
+
         cout << number << " is even" << endl;
     }
     else
@@ -42,6 +66,17 @@ void task4()
         cout << number << " is odd" << endl;
     }
 }
+
+int main()
+{
+    task1();
+    task2();
+    task3();
+    task4();
+
+    return 0;
+}
+
 
 void task5()
 {
